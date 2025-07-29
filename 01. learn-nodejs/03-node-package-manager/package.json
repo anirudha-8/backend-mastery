@@ -9,5 +9,8 @@
 	"keywords": [],
 	"author": "Anirudha Bele",
 	"license": "ISC",
-	"description": ""
+	"description": "",
+	"dependencies": {
+		"loadash": "^1.0.0"
+	}
 }
