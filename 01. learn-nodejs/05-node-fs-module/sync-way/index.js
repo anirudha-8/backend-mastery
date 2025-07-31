@@ -2,31 +2,58 @@ const fs = require("fs");
 const path = require("path");
 
 const dataFolder = path.join(__dirname, "data");
-
-// check if "data" folder exist, if not create one
-if (!fs.existsSync(dataFolder)) {
-	fs.mkdirSync(dataFolder);
-	console.log(`"data" folder created!`);
-}
-
-// ================ file operations in sync way ================ //
-
 const filePath = path.join(dataFolder, "example.txt");
 
-// writing to file if exist, else create one and override it
-fs.writeFileSync(
-	filePath,
-	"Hello, from sync way of handling files using `fs` module"
-);
+// Utility function for safe file operations
+function safeExecute(action, callback) {
+	try {
+		callback();
+	} catch (err) {
+		console.error(`❌ Error during ${action}:`, err.message);
+	}
+}
 
-// read file content
-const readFileContent = fs.readFileSync(filePath, "utf-8");
-console.log(`File content: ${readFileContent}`);
+// Ensure "data" folder exists
+safeExecute("folder check", () => {
+	if (!fs.existsSync(dataFolder)) {
+		fs.mkdirSync(dataFolder);
+		console.log(`📁 "data" folder created!`);
+	} else {
+		console.log(`📁 "data" folder already exists.`);
+	}
+});
 
-// append new content to file
-fs.appendFileSync(filePath, "\nGood Bye :)");
-console.log(`Updated File content: ${fs.readFileSync(filePath, "utf-8")}`);
+// ========== FILE OPERATIONS (SYNC WAY) ========== //
 
-// delete file
-fs.unlinkSync(filePath);
-console.log(`File deleted successfully!`);
+// CREATE / WRITE
+safeExecute("file write", () => {
+	fs.writeFileSync(
+		filePath,
+		"Hello, from sync way of handling files using `fs` module"
+	);
+	console.log(`✅ File written at: ${filePath}`);
+});
+
+// READ
+safeExecute("file read", () => {
+	const content = fs.readFileSync(filePath, "utf-8");
+	console.log(`📖 File content: ${content}`);
+});
+
+// UPDATE / APPEND
+safeExecute("file append", () => {
+	fs.appendFileSync(filePath, "\nGood Bye :)");
+	const updatedContent = fs.readFileSync(filePath, "utf-8");
+	console.log(`✏️ Updated File content:\n${updatedContent}`);
+});
+
+// DELETE
+safeExecute("file delete", () => {
+	// Optional safeguard: delete only if exists
+	if (fs.existsSync(filePath)) {
+		fs.unlinkSync(filePath);
+		console.log(`🗑️ File deleted successfully!`);
+	} else {
+		console.log(`⚠️ File does not exist, nothing to delete.`);
+	}
+});
