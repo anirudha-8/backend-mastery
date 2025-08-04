@@ -1,0 +1,5 @@
+Callback:
+A callback is a function passed as an argument to another function, which is then invoked inside the outer function to complete some kind of routine or action.
+
+Callback Hell:
+Callback hell refers to a situation in asynchronous programming where callbacks are nested within other callbacks multiple levels deep, making code difficult to read, maintain, and debug. This often results in a "pyramid" or "arrow" structure in the code.
