@@ -30,3 +30,15 @@ class TaskManager extends EventEmitter {
 		});
 	}
 }
+
+// ================ Example Usage ================ //
+
+const manager = new TaskManager();
+
+manager.on("taskAdded", (task) => {
+	console.log(`🆕 Task Added: "${task}`);
+});
+
+manager.on("taskCompleted", (task) => {
+	console.log(`🎉 Task Completed: "${task}`);
+});
