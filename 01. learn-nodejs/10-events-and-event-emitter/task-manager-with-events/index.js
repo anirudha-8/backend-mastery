@@ -42,3 +42,17 @@ manager.on("taskAdded", (task) => {
 manager.on("taskCompleted", (task) => {
 	console.log(`🎉 Task Completed: "${task}`);
 });
+
+// ================ Example Demo ================ //
+
+manager.addTask("Learn Node.js Events");
+
+manager.addTask("Build Mini Project");
+
+manager.addTask("Learn Express.js");
+
+manager.completeTask("Learn Node.js Events");
+
+manager.completeTask("Build Mini Project");
+
+manager.listTasks();
