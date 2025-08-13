@@ -22,7 +22,7 @@ app.use((err, req, res, next) => {
 	res.status(500).send("something went wrong");
 });
 
-const port = 3000;
+const port = 8080;
 
 app.listen(port, () => {
 	console.log(`Server is now running at port ${port}`);

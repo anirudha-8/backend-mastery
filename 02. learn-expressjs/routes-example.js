@@ -55,7 +55,7 @@ app.get("/products/:productId", (req, res) => {
 	}
 });
 
-const port = 3000;
+const port = 8080;
 
 app.listen(port, () => {
 	console.log(`Server is now running at port ${port}`);
