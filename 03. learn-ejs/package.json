@@ -8,5 +8,8 @@
   "keywords": [],
   "author": "Anirudha Bele",
   "license": "ISC",
-  "description": "learning ejs template engine"
+  "description": "learning ejs template engine",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
