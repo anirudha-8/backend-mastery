@@ -32,7 +32,7 @@ app.get("/about", (req, res) => {
 	res.render("about", { title: "About page" });
 });
 
-const port = 3000;
+const port = 8080;
 
 app.listen(port, () => {
 	console.log("server is running");
