@@ -16,6 +16,13 @@ let books = [
 	},
 ];
 
+//intro route
+app.get("/", (req, res) => {
+	res.json({
+		message: "Welcome to our bookstore api",
+	});
+});
+
 const port = 8080;
 
 app.get("/", (req, res) => res.send("Hello World!"));
