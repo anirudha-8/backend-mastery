@@ -23,6 +23,11 @@ app.get("/", (req, res) => {
 	});
 });
 
+//get all books
+app.get("/get", (req, res) => {
+	res.json(books);
+});
+
 const port = 8080;
 
 app.get("/", (req, res) => res.send("Hello World!"));
