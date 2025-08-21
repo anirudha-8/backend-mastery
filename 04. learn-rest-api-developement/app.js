@@ -40,6 +40,20 @@ app.get("/get/:id", (req, res) => {
 	}
 });
 
+//add a new book
+app.post("/add", (req, res) => {
+	const newBook = {
+		id: Math.floor(Math.random() * 1000).toString(),
+		title: `Book ${Math.floor(Math.random() * 1000)}`,
+	};
+
+	books.push(newBook);
+	res.status(200).json({
+		data: newBook,
+		message: "New book is added successfully",
+	});
+});
+
 const port = 8080;
 
 app.get("/", (req, res) => res.send("Hello World!"));
