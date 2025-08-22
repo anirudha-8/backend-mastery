@@ -54,7 +54,7 @@ app.post("/add", (req, res) => {
 	});
 });
 
-//update a book
+// update a book
 app.put("/update/:id", (req, res) => {
 	const findCurrentBook = books.find(
 		(bookItem) => bookItem.id === req.params.id
@@ -73,6 +73,7 @@ app.put("/update/:id", (req, res) => {
 	}
 });
 
+// delete a book
 app.delete("/delete/:id", (req, res) => {
 	const findIndexOfCurrentBook = books.findIndex(
 		(item) => item.id === req.params.id
