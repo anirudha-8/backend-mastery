@@ -31,7 +31,7 @@ MongoDB Atlas is a **fully managed cloud database service** provided by MongoDB.
 
    ```json
    {
-     "name": "Anya",
+     "name": "Anirudha",
      "role": "Web Developer",
      "skills": ["JavaScript", "React", "MongoDB"],
      "experience": 2
