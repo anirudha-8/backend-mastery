@@ -72,7 +72,7 @@ MongoDB Atlas is a **fully managed cloud database service** provided by MongoDB.
 
 When you create a cluster, Atlas gives you a connection string like this:
 
-```
+```js
 mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/test
 ```
 
