@@ -1,12 +1,12 @@
 {
-  "name": "08.-learn-mongoose",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+	"name": "08.-learn-mongoose",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "Anirudha Bele",
+	"license": "ISC",
+	"description": "Learn Mongoose for MongoDB"
 }
