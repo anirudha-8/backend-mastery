@@ -8,5 +8,8 @@
 	"keywords": [],
 	"author": "Anirudha Bele",
 	"license": "ISC",
-	"description": "Learn Mongoose for MongoDB"
+	"description": "Learn Mongoose for MongoDB",
+	"dependencies": {
+		"express": "^5.1.0"
+	}
 }
