@@ -17,3 +17,6 @@ const UserSchema = new mongoose.Schema({
 	tags: [String],
 	createdAt: { type: Date, default: Date.now },
 });
+
+//create User model
+const User = mongoose.model("User", UserSchema);
