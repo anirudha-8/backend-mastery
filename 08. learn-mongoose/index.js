@@ -20,3 +20,8 @@ const UserSchema = new mongoose.Schema({
 
 //create User model
 const User = mongoose.model("User", UserSchema);
+
+// create base function to run all mongoose operations
+async function runQueryExamples() {}
+
+runQueryExamples();
