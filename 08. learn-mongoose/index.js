@@ -7,3 +7,13 @@ mongoose
 	)
 	.then(() => console.log("database connected successfully"))
 	.catch((e) => console.log(e));
+
+// create UserSchema
+const UserSchema = new mongoose.Schema({
+	name: String,
+	email: String,
+	age: Number,
+	isActive: Boolean,
+	tags: [String],
+	createdAt: { type: Date, default: Date.now },
+});
