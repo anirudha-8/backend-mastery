@@ -22,6 +22,19 @@ const UserSchema = new mongoose.Schema({
 const User = mongoose.model("User", UserSchema);
 
 // create base function to run all mongoose operations
-async function runQueryExamples() {}
+async function runQueryExamples() {
+	try {
+		/*
+         === Here, in try block we've performed mongoose operations.
+         === For each the function will run and will create the same entry each time.
+         === So, you make sure to change the document each time.
+         === Also, perform one operation at one time and do comment for all rest of the operations
+         */
+	} catch (e) {
+		console.log("Error ->", e);
+	} finally {
+		await mongoose.connection.close();
+	}
+}
 
 runQueryExamples();
