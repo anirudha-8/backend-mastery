@@ -18,7 +18,7 @@ const UserSchema = new mongoose.Schema({
 	createdAt: { type: Date, default: Date.now },
 });
 
-//create User model
+// create User model
 const User = mongoose.model("User", UserSchema);
 
 // create base function to run all mongoose operations
