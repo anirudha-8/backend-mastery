@@ -50,6 +50,10 @@ async function runQueryExamples() {
 		});
 		await newUser2.save();
 		console.log("Created new user", newUser);
+
+		// -------- get all users -------- //
+		const allUsers = await User.find({});
+		console.log(allUsers);
 	} catch (e) {
 		console.log("Error ->", e);
 	} finally {
