@@ -32,14 +32,24 @@ async function runQueryExamples() {
          */
 
 		// -------- create a new document -------- //
-        // -> first way
-		const newUser = await User.create({
+		// -> first way
+		const newUser1 = await User.create({
 			name: "Updated User",
 			email: "updated@gmail.com",
 			age: "75",
 			isActive: true,
 			tags: ["developer"],
 		});
+		// -> second way
+		const newUser2 = new User({
+			name: "Raj Mukherjee",
+			email: "raj@gmail.com",
+			age: "40",
+			isActive: true,
+			tags: ["developer", "designer", "manager"],
+		});
+		await newUser2.save();
+		console.log("Created new user", newUser);
 	} catch (e) {
 		console.log("Error ->", e);
 	} finally {
