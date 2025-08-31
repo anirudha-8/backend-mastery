@@ -62,6 +62,10 @@ async function runQueryExamples() {
 		// -------- get particular user -------- //
 		const getJohnDoeUser = await User.findOne({ name: "John Doe" });
 		console.log(getJohnDoeUser);
+
+		// -------- get last created user -------- //
+		const getLastCreatedUserByUserId = await User.findById(newUser2._id);
+		console.log(getLastCreatedUserByUserId, "getLastCreatedUserByUserId");
 	} catch (e) {
 		console.log("Error ->", e);
 	} finally {
