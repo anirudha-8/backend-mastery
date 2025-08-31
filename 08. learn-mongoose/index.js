@@ -30,6 +30,16 @@ async function runQueryExamples() {
          === So, you make sure to change the document each time.
          === Also, perform one operation at one time and do comment for all rest of the operations
          */
+
+		// -------- create a new document -------- //
+        // -> first way
+		const newUser = await User.create({
+			name: "Updated User",
+			email: "updated@gmail.com",
+			age: "75",
+			isActive: true,
+			tags: ["developer"],
+		});
 	} catch (e) {
 		console.log("Error ->", e);
 	} finally {
