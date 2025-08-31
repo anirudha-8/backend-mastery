@@ -58,6 +58,10 @@ async function runQueryExamples() {
 		// -------- get all users whose status is false -------- //
 		const getUserOfActiveFalse = await User.find({ isActive: true });
 		console.log(getUserOfActiveFalse);
+
+		// -------- get particular user -------- //
+		const getJohnDoeUser = await User.findOne({ name: "John Doe" });
+		console.log(getJohnDoeUser);
 	} catch (e) {
 		console.log("Error ->", e);
 	} finally {
