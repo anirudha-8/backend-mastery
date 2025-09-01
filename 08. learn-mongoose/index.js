@@ -70,6 +70,10 @@ async function runQueryExamples() {
 		// -------- get specific field details  -------- //
 		const selectedFields = await User.find().select("name email -_id");
 		console.log(selectedFields);
+
+		// -------- get limited users like pagination functionality  -------- //
+		const limitedUsers = await User.find().limit(5).skip(1);
+		console.log(limitedUsers);
 	} catch (e) {
 		console.log("Error ->", e);
 	} finally {
