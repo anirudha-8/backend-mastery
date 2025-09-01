@@ -66,6 +66,10 @@ async function runQueryExamples() {
 		// -------- get last created user -------- //
 		const getLastCreatedUserByUserId = await User.findById(newUser2._id);
 		console.log(getLastCreatedUserByUserId, "getLastCreatedUserByUserId");
+
+		// -------- get specific field details  -------- //
+		const selectedFields = await User.find().select("name email -_id");
+		console.log(selectedFields);
 	} catch (e) {
 		console.log("Error ->", e);
 	} finally {
