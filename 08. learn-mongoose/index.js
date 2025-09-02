@@ -86,6 +86,17 @@ async function runQueryExamples() {
 		// -------- delete user based on user_id  -------- //
 		const deletedUser = await User.findByIdAndDelete(newUser2._id);
 		console.log("deleted user ->", deletedUser);
+
+		// -------- update user based on user_id  -------- //
+		const updateUser = await User.findByIdAndUpdate(
+			newUser2._id,
+			{
+				$set: { age: 100 },
+				$push: { tags: "updated" },
+			},
+			{ new: true }
+		);
+		console.log("updated user", updateUser);
 	} catch (e) {
 		console.log("Error ->", e);
 	} finally {
