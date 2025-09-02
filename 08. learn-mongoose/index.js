@@ -79,9 +79,13 @@ async function runQueryExamples() {
 		const sortedUsers = await User.find().sort({ age: 1 });
 		console.log(sortedUsers);
 
-		// -------- get sorted users according to "age" field  -------- //
+		// -------- get total number of documents (entries)  -------- //
 		const countDocuments = await User.countDocuments({ isActive: true });
 		console.log(countDocuments);
+
+		// -------- delete user based on user_id  -------- //
+		const deletedUser = await User.findByIdAndDelete(newUser2._id);
+		console.log("deleted user ->", deletedUser);
 	} catch (e) {
 		console.log("Error ->", e);
 	} finally {
