@@ -74,6 +74,10 @@ async function runQueryExamples() {
 		// -------- get limited users like pagination functionality  -------- //
 		const limitedUsers = await User.find().limit(5).skip(1);
 		console.log(limitedUsers);
+
+		// -------- get sorted users according to "age" field  -------- //
+		const sortedUsers = await User.find().sort({ age: 1 });
+		console.log(sortedUsers);
 	} catch (e) {
 		console.log("Error ->", e);
 	} finally {
