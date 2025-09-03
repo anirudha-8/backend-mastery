@@ -1,0 +1,12 @@
+{
+	"name": "09.-book-store-api",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "Anirudha Bele",
+	"license": "ISC",
+	"description": "Project to learn Restful API by creating book store app."
+}
