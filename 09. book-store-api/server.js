@@ -9,6 +9,9 @@ const PORT = process.env.PORT || 8080;
 // connect to databases
 connectDB();
 
+// middleware -> express.json()
+app.use(express.json());
+
 // HOME route
 app.get("/", (req, res) => res.send("Home Route!"));
 
