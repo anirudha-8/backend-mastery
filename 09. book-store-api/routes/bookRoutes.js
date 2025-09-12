@@ -1,12 +1,20 @@
-const express = require("express");
+import express from "express";
 
-const router = express.router();
+const router = express.Router();
 
-// all book api related routes
-router.get("/get");
-router.get("/get/:id");
-router.post("/add");
-router.put("/update/:id");
-router.delete("/delete/:id");
+// @desc - get all books
+router.get("/");
 
-module.exports = router;
+// @desc - get single book by ID
+router.get("/:id");
+
+// @desc - create new book
+router.post("/");
+
+// @desc - delete a book
+router.delete("/:id");
+
+// @desc - update a book
+router.put("/:id");
+
+export default router;
