@@ -24,3 +24,12 @@ const deleteBook = async (req, res) => {};
 // @route 	PUT /api/books/update/:id
 // @access 	Public
 const updateBook = async (req, res) => {};
+
+// exporting all controllers
+module.exports = {
+	getAllBooks,
+	getSingleBookById,
+	addNewBook,
+	deleteBook,
+	updateBook,
+};
