@@ -60,6 +60,22 @@ const getSingleBookById = async (req, res) => {
 // @access 	Public
 const addNewBook = async (req, res) => {
 	try {
+		const { title, author, publishYear } = req.body;
+
+		if (!title || !author) {
+			return res.status(400).json({
+				success: false,
+				message: `"Title" and "Author" are required fields!`,
+			});
+		}
+
+		const newBook = await Book.create({ title, author, publishYear });
+
+		res.status(201).json({
+			success: true,
+			message: "Book created successfully!",
+			data: newBook,
+		});
 	} catch (error) {
 		console.error(`Error: ${error}`);
 		res.status(500).json({
