@@ -5,6 +5,19 @@ const Book = require("../models/Book");
 // @access 	Public
 const getAllBooks = async (req, res) => {
 	try {
+		const books = await Book.find({});
+
+		if (!books.length) {
+			return res
+				.status(404)
+				.json({ success: false, message: "No books found!" });
+		}
+
+		res.status(200).json({
+			success: true,
+			message: "All books fetched successfully!",
+			data: books,
+		});
 	} catch (error) {
 		console.error(`Error: ${error}`);
 		res.status(500).json({
@@ -33,19 +46,6 @@ const getSingleBookById = async (req, res) => {
 // @access 	Public
 const addNewBook = async (req, res) => {
 	try {
-		const books = await Book.find({});
-
-		if (!books.length) {
-			return res
-				.status(404)
-				.json({ success: false, message: "No books found!" });
-		}
-
-		res.status(200).json({
-			success: true,
-			message: "All books fetched successfully!",
-			data: books,
-		});
 	} catch (error) {
 		console.error(`Error: ${error}`);
 		res.status(500).json({
@@ -60,20 +60,6 @@ const addNewBook = async (req, res) => {
 // @access 	Public
 const deleteBook = async (req, res) => {
 	try {
-		const { id } = req.params;
-		const book = await Book.findById(id);
-
-		if (!book) {
-			return res
-				.status(404)
-				.json({ success: false, message: "Book not found!" });
-		}
-
-		res.status(200).json({
-			success: true,
-			message: "Book fetched successfully!",
-			data: book,
-		});
 	} catch (error) {
 		console.error(`Error: ${error}`);
 		res.status(500).json({
