@@ -119,6 +119,27 @@ const deleteBook = async (req, res) => {
 // @access 	Public
 const updateBook = async (req, res) => {
 	try {
+		const { id } = req.params;
+
+		const { title, author, publishYear } = req.body;
+
+		const updatedBook = await Book.findByIdAndUpdate(
+			id,
+			{ title, author, publishYear },
+			{ new: true, runValidators: true }
+		);
+
+		if (!updatedBook) {
+			return res
+				.status(404)
+				.json({ success: false, message: "Book not found for update!" });
+		}
+
+		res.status(200).json({
+			success: true,
+			message: "Book updated successfully!",
+			data: updatedBook,
+		});
 	} catch (error) {
 		console.error(`Error: ${error}`);
 		res.status(500).json({
