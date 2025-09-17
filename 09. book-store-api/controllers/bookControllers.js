@@ -90,6 +90,21 @@ const addNewBook = async (req, res) => {
 // @access 	Public
 const deleteBook = async (req, res) => {
 	try {
+		const { id } = req.params;
+
+		const deletedBook = await Book.findByIdAndDelete(id);
+
+		if (!deletedBook) {
+			return res
+				.status(404)
+				.json({ success: false, message: "Book not found for deletion!" });
+		}
+
+		res.status(200).json({
+			success: true,
+			message: "Book deleted successfully!",
+			data: deletedBook,
+		});
 	} catch (error) {
 		console.error(`Error: ${error}`);
 		res.status(500).json({
