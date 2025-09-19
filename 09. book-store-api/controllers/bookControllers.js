@@ -60,7 +60,7 @@ const getSingleBookById = async (req, res) => {
 // @access 	Public
 const addNewBook = async (req, res) => {
 	try {
-		const { title, author, publishYear } = req.body;
+		const { title, author, year } = req.body;
 
 		if (!title || !author) {
 			return res.status(400).json({
@@ -69,7 +69,7 @@ const addNewBook = async (req, res) => {
 			});
 		}
 
-		const newBook = await Book.create({ title, author, publishYear });
+		const newBook = await Book.create({ title, author, year });
 
 		res.status(201).json({
 			success: true,
