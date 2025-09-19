@@ -121,11 +121,11 @@ const updateBook = async (req, res) => {
 	try {
 		const { id } = req.params;
 
-		const { title, author, publishYear } = req.body;
+		const { title, author, year } = req.body;
 
 		const updatedBook = await Book.findByIdAndUpdate(
 			id,
-			{ title, author, publishYear },
+			{ title, author, year },
 			{ new: true, runValidators: true }
 		);
 
