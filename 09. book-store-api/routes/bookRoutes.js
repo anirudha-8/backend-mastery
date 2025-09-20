@@ -1,11 +1,11 @@
-import express from "express";
-import {
+const express = require("express");
+const {
 	addNewBook,
 	deleteBook,
 	getAllBooks,
 	getSingleBookById,
 	updateBook,
-} from "../controllers/bookControllers";
+} = require("../controllers/bookControllers");
 
 const router = express.Router();
 
@@ -24,4 +24,4 @@ router.delete("/delete/:id", deleteBook);
 // @desc - update a book
 router.put("/update/:id", updateBook);
 
-export default router;
+module.exports = router;
