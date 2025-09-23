@@ -1,17 +1,17 @@
 {
-  "name": "10.-learn-nodejs-auth",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "dotenv": "^17.2.3",
-    "express": "^5.2.1",
-    "mongoose": "^9.0.2"
-  }
+	"name": "10.-learn-nodejs-auth",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "Anirudha Bele",
+	"license": "ISC",
+	"description": "A mini-project to learn node.js authentication and authorization.",
+	"dependencies": {
+		"dotenv": "^17.2.3",
+		"express": "^5.2.1",
+		"mongoose": "^9.0.2"
+	}
 }
