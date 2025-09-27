@@ -9,3 +9,15 @@ const registerUser = async (req, res) => {
 		});
 	}
 };
+
+// login user
+const loginUser = async (req, res) => {
+	try {
+	} catch (error) {
+		console.error(`Error in login user: ${error}`);
+		res.status(500).json({
+			success: false,
+			message: "Internal server error, please try again later!",
+		});
+	}
+};
