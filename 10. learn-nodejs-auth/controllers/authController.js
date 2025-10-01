@@ -1,4 +1,6 @@
-// register user
+// @desc 	Register User
+// @route 	POST /api/auth/register
+// @access 	Public
 const registerUser = async (req, res) => {
 	try {
 	} catch (error) {
@@ -10,7 +12,9 @@ const registerUser = async (req, res) => {
 	}
 };
 
-// login user
+// @desc 	Login User
+// @route 	POST /api/auth/login
+// @access 	Public
 const loginUser = async (req, res) => {
 	try {
 	} catch (error) {
