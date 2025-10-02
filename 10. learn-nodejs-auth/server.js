@@ -13,6 +13,9 @@ const PORT = process.env.PORT || 3000;
 // home route
 app.get("/", (req, res) => res.send("Hello World!"));
 
+// API route status check
+app.get("/api", (req, res) => res.send("API status check - healthy!"));
+
 // API related routes
 app.use("/api/auth", authRoutes);
 
