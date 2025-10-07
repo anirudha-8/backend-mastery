@@ -7,6 +7,11 @@ const registerUser = async (req, res) => {
 	try {
 		// extract user information from request body
 		const { username, email, password, role } = req.body;
+
+		// check if the user is already exists in our database
+		const checkExistingUser = await User.findOne({
+			$or: [{ username }, { email }],
+		});
 	} catch (error) {
 		console.error(`Error in register user: ${error}`);
 		res.status(500).json({
