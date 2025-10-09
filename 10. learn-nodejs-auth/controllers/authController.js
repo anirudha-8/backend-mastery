@@ -1,4 +1,5 @@
 const User = require("../models/User");
+const bcrypt = require("bcryptjs");
 
 // @desc 	Register User
 // @route 	POST /api/auth/register
