@@ -32,6 +32,8 @@ const registerUser = async (req, res) => {
 			password: hashedPassword,
 			role: role || "user",
 		});
+
+		await newlyCreatedUser.save();
 	} catch (error) {
 		console.error(`Error in register user: ${error}`);
 		res.status(500).json({
