@@ -34,6 +34,13 @@ const registerUser = async (req, res) => {
 		});
 
 		await newlyCreatedUser.save();
+
+		if (newlyCreatedUser) {
+			res.status(201).json({
+				success: true,
+				message: "User registered successfully!",
+			});
+		}
 	} catch (error) {
 		console.error(`Error in register user: ${error}`);
 		res.status(500).json({
