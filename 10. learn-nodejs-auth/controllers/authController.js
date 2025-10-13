@@ -60,6 +60,8 @@ const registerUser = async (req, res) => {
 // @access 	Public
 const loginUser = async (req, res) => {
 	try {
+		// extract user information from body
+		const { username, password } = req.body;
 	} catch (error) {
 		console.error(`Error in login user: ${error}`);
 		res.status(500).json({
