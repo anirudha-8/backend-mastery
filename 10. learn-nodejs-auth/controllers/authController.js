@@ -62,6 +62,9 @@ const loginUser = async (req, res) => {
 	try {
 		// extract user information from body
 		const { username, password } = req.body;
+
+		//find if the current user is exists in database or not
+		const user = await User.findOne({ username });
 	} catch (error) {
 		console.error(`Error in login user: ${error}`);
 		res.status(500).json({
