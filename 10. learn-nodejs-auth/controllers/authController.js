@@ -65,6 +65,13 @@ const loginUser = async (req, res) => {
 
 		//find if the current user is exists in database or not
 		const user = await User.findOne({ username });
+
+		if (!user) {
+			return res.status(400).json({
+				success: false,
+				message: `User doesn't exists`,
+			});
+		}
 	} catch (error) {
 		console.error(`Error in login user: ${error}`);
 		res.status(500).json({
