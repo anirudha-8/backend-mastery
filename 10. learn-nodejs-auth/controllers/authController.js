@@ -63,7 +63,7 @@ const loginUser = async (req, res) => {
 		// extract user information from body
 		const { username, password } = req.body;
 
-		//find if the current user is exists in database or not
+		// find if the current user is exists in database or not
 		const user = await User.findOne({ username });
 
 		if (!user) {
@@ -72,6 +72,9 @@ const loginUser = async (req, res) => {
 				message: `User doesn't exists`,
 			});
 		}
+
+		// check if the password is correct or not
+		const isPasswordMatch = await bcrypt.compare(password, user.password);
 	} catch (error) {
 		console.error(`Error in login user: ${error}`);
 		res.status(500).json({
