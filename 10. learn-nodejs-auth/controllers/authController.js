@@ -49,12 +49,18 @@ const registerUser = async (req, res) => {
 		}
 
 		// create user token
-		const token = jwt.sign({
-			id: user._id,
-			username: user.username,
-			email: user.email,
-			role: user.role,
-		});
+		const token = jwt.sign(
+			{
+				id: user._id,
+				username: user.username,
+				email: user.email,
+				role: user.role,
+			},
+			JWT_SECRET_TOKEN,
+			{
+				expiresIn: "15m",
+			},
+		);
 	} catch (error) {
 		console.error(`Error in register user: ${error}`);
 		res.status(500).json({
