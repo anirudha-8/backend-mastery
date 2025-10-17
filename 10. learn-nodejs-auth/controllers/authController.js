@@ -61,6 +61,12 @@ const registerUser = async (req, res) => {
 				expiresIn: "15m",
 			},
 		);
+
+		// send success status for user logged in
+		res.status(200).json({
+			success: true,
+			message: "Logged in successful",
+		});
 	} catch (error) {
 		console.error(`Error in register user: ${error}`);
 		res.status(500).json({
