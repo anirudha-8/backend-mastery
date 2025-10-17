@@ -66,6 +66,7 @@ const registerUser = async (req, res) => {
 		res.status(200).json({
 			success: true,
 			message: "Logged in successful",
+			accessToken,
 		});
 	} catch (error) {
 		console.error(`Error in register user: ${error}`);
