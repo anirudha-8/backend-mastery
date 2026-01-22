@@ -47,27 +47,6 @@ const registerUser = async (req, res) => {
 				message: "Unable to register user, please try again later!",
 			});
 		}
-
-		// create user token
-		const token = jwt.sign(
-			{
-				id: user._id,
-				username: user.username,
-				email: user.email,
-				role: user.role,
-			},
-			JWT_SECRET_TOKEN,
-			{
-				expiresIn: "15m",
-			},
-		);
-
-		// send success status for user logged in
-		res.status(200).json({
-			success: true,
-			message: "Logged in successful",
-			accessToken,
-		});
 	} catch (error) {
 		console.error(`Error in register user: ${error}`);
 		res.status(500).json({
@@ -104,6 +83,27 @@ const loginUser = async (req, res) => {
 				message: "Invalid credentials!",
 			});
 		}
+
+		// create user token
+		const token = jwt.sign(
+			{
+				id: user._id,
+				username: user.username,
+				email: user.email,
+				role: user.role,
+			},
+			JWT_SECRET_TOKEN,
+			{
+				expiresIn: "15m",
+			},
+		);
+
+		// send success status for user logged in
+		res.status(200).json({
+			success: true,
+			message: "Logged in successful",
+			accessToken,
+		});
 	} catch (error) {
 		console.error(`Error in login user: ${error}`);
 		res.status(500).json({
