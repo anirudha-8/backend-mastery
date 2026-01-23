@@ -92,7 +92,7 @@ const loginUser = async (req, res) => {
 				email: user.email,
 				role: user.role,
 			},
-			JWT_SECRET_TOKEN,
+			process.env.JWT_SECRET_TOKEN,
 			{
 				expiresIn: "15m",
 			},
