@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
+const homeRoutes = require("./routes/homeRoutes.js");
 
 // connect to MongoDB
 connectDB();
@@ -21,6 +22,7 @@ app.get("/api", (req, res) => res.send("API status check - healthy!"));
 
 // API related routes
 app.use("/api/auth", authRoutes);
+app.use("/api/home", homeRoutes);
 
 // listening to the server
 app.listen(PORT, () => {
